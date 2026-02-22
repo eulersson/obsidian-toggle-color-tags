@@ -1,0 +1,10 @@
+{
+	"id": "toggle-color-tags",
+	"name": "Toggle Color Tags",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Quickly apply color tags to your text",
+	"author": "Ramon Blanquer Ruiz",
+	"authorUrl": "https://ramn.dev",
+	"isDesktopOnly": false
+}
