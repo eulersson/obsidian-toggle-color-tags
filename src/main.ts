@@ -1,19 +1,24 @@
 import { Editor, Plugin } from 'obsidian';
+import { iconIdFor, registerColorIcons } from './icons';
 
 export default class ToggleColorTagsPlugin extends Plugin {
 	async onload() {
+		// Colors must stay in sync with the `i.<class>` rules in `styles.css`.
 		const colors = [
-			{ name: 'Green', class: 'g' },
-			{ name: 'Blue', class: 'b' },
-			{ name: 'Red', class: 'r' },
-			{ name: 'Pink', class: 'p' },
-			{ name: 'Yellow', class: 'y' },
+			{ name: 'Green', class: 'g', color: '#6aa84f' },
+			{ name: 'Blue', class: 'b', color: '#3c78d8' },
+			{ name: 'Red', class: 'r', color: '#cc0000' },
+			{ name: 'Pink', class: 'p', color: '#d679d6' },
+			{ name: 'Yellow', class: 'y', color: '#f1c231' },
 		];
+
+		registerColorIcons(colors);
 
 		colors.forEach(({ name, class: className }) => {
 			this.addCommand({
 				id: `toggle-${className}-tag`,
 				name: `${name} (${className})`,
+				icon: iconIdFor(className),
 				editorCallback: (editor: Editor) => {
 					const selectedText = editor.getSelection();
 					const doc = editor.getValue();
@@ -86,6 +91,7 @@ export default class ToggleColorTagsPlugin extends Plugin {
 		this.addCommand({
 			id: 'clear-color-tags',
 			name: 'Clear All Color Tags',
+			icon: 'eraser',
 			editorCallback: (editor: Editor) => {
 				const doc = editor.getValue();
 				const startOffset = editor.posToOffset(editor.getCursor('from'));
