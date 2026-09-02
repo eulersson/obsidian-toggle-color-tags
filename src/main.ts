@@ -90,7 +90,7 @@ export default class ToggleColorTagsPlugin extends Plugin {
 		// Clear ALL color tags
 		this.addCommand({
 			id: 'clear-color-tags',
-			name: 'Clear All Color Tags',
+			name: 'Clear all color tags',
 			icon: 'eraser',
 			editorCallback: (editor: Editor) => {
 				const doc = editor.getValue();

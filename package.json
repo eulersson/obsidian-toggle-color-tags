@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-toggle-color-tags",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Quickly apply color tags to your text",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
